@@ -12,7 +12,7 @@
 
 ## Description
 
-[Screenshot](#screenshot)  [Video demo](#video-demo)
+This is a CLI application that takes in user input to create an employee tracker that can view all departments, view all roles, view all employees, add a department, add a role, add an employee, update an employee role, update employee managers, view employees by manager, view employees by department, delete departments, roles, and employees and view the total utilized budget of a department using inquirer, console.table and mysql 2 packages.
 
 ## User Story
 
