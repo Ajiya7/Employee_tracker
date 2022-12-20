@@ -26,12 +26,12 @@ CREATE TABLE Role (
 
 -- Creates the table "Employee" within Employee_db --
 CREATE TABLE Employee (
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT AUTO_INCREMENT,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
     role_id INT, 
     PRIMARY KEY (id),
-    FOREIGN KEY (role_id
+    FOREIGN KEY (Role_id)
     REFERENCES Role(id)
     ON DELETE SET NULL,
     manager_id INT,

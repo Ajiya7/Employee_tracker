@@ -4,17 +4,21 @@ const inquirer = require("inquirer");
 // importing mysql2
 const mysql2 = require("mysql2");
 // import console.table
-const consoleTable = require("console.table");
-const { allowedNodeEnvironmentFlags } = require("process");
-const { endianness } = require("os");
+require("console.table");
 
 // connecting database to mysql2
 const db = mysql2.createConnection({
-  host: "localhost",
+  host: "127.0.0.1",
   user: "root",
-  password: "",
   database: "Employee_db",
 });
+
+db.connect(err => {
+  if (err) throw err
+  console.log(err)
+  console.log('connected as id ' + db.threadId);
+});
+
 
 const actions = async () => {
   await inquirer
@@ -44,9 +48,9 @@ const actions = async () => {
     ])
     .then(async (choice) => {
       const { actions } = choice;
-      if (choice === "view all departments") {
+      if (actions === "view all departments") {
         await viewDepartments();
-      } else if (choice === "view all roles") {
+      } else if (actions === "view all roles") {
         await viewRoles();
       } else if (choice === "view all employees") {
         await viewEmployees();
@@ -79,9 +83,17 @@ const actions = async () => {
 };
 
 // view all departments
-viewDepartments = () => {};
+viewDepartments = () => {
+  db.query("SELECT * FROM Department", function (err, table) {
+    console.table(table)
+  });
+};
 // view all roles
-viewRoles = () => {};
+viewRoles = () => {
+  db.query("SELECT Role.id, Department.name AS department FROM Role JOIN Department ON Department.id = Role.department_id", function (err, table) {
+    console.table(table);
+  });
+};
 // view all employees
 viewEmployees = () => {};
 // to add a department
@@ -108,5 +120,7 @@ deleteEmployee = () => {};
 viewBudgetbyDepartmet = () => {};
 // to stop the applictaion
 end = () => {
-  db.end
+  db.end;
 };
+
+actions()
