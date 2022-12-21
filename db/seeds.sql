@@ -17,7 +17,7 @@ VALUES ("Lawyer",3, 200000),
 
 INSERT INTO Employee (first_name, last_name, role_id, manager_id )
 VALUES ("Elliot","Sadcfv",1,null),
-       ("Amira","sadvb", 4,null),
+       ("Amira","sadvb", 4,1),
        ("Christoper","QEWRGHN", 5,2),
-       ("Verónica","wqdefrbgr", 3,2),
-       ("Igor","aeregtyht", 2,2);
+       ("Verónica","wqdefrbgr", 3,3),
+       ("Igor","aeregtyht", 2,4);
