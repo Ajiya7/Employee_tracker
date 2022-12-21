@@ -171,7 +171,7 @@ addEmployee = () => {
       },
     ])
     .then((answer) => {
-      const inputs = [answer.firstName, answer.lastName];
+      const inputs = [answer.firstname, answer.lastname];
 
       db.query("SELECT role.id, role.title FROM role", function (err, table) {
         const roles = table.map(({ id, title }) => ({
@@ -210,6 +210,7 @@ addEmployee = () => {
                 .then((answer) => {
                   const manager = answer.manager;
                   inputs.push(manager);
+                  console.log(inputs);
 
                   db.query(
                     `INSERT INTO Employee (first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?);`,
@@ -291,4 +292,3 @@ end = () => {
 };
 
 actions();
-// addemployee, updateemployeerole

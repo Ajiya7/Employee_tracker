@@ -6,7 +6,6 @@
   - [Description](#description)
   - [User Story](#user-story)
   - [Acceptance Criteria](#acceptance-criteria)
-  - [Screenshot](#screenshot)
   - [Video demo](#video-demo)
   - [Contact Me](#contact-me)
 
@@ -44,11 +43,8 @@ WHEN I choose to update an employee role
 THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
 ```
 
-## Screenshot
-![App Screenshot]()
-
 ## Video demo
-link to video: [Video link]()
+link to video: [Video link](https://drive.google.com/file/d/1qWnqvQ5yVycltXq2VV-35_1HOvx2LKvf/view)
 ## Contact Me
 - Instagram: _ajiya
 - Email: Ajiyafaruk@gmail.com
